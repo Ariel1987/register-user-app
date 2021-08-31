@@ -2,10 +2,8 @@ import styled, { css } from "styled-components"
 
 export const Wrapper = styled.ul`
     ${({ theme }) => css`
-        li {
-            padding: 0.5rem;
-            list-style: none;
-        }
+        padding: 0.5rem;
+        list-style: none;
         
         p {
             margin: 0; 

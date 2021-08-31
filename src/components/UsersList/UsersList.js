@@ -1,10 +1,10 @@
-import User from "./User"
+import UserItem from "../UserItem/UserItem"
 
-const ShowUsers = props => {
+const UsersList = props => {
     return (
         <ul>
             {props.users.map((user) => (
-                <User
+                <UserItem
                     key={user.id} 
                     name={user.name}
                     age={user.age}
@@ -14,4 +14,4 @@ const ShowUsers = props => {
     )
 }
 
-export default ShowUsers
+export default UsersList

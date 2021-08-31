@@ -1,24 +1,22 @@
 import { useState } from "react";
 import { Wrapper, RegisterUserWrapper } from "./App.styles";
-import NewUser from "./components/NewUser";
-import ShowUsers from "./components/ShowUsers";
+import AddUserCard from "./components/AddUserCard/AddUserCard";
+import UsersList from "./components/UsersList/UsersList";
 
 function App() {
 
   const [users, setUsers] = useState([])
 
   const addUserHandler = (user) => {
-    setUsers((prevUsers) => {
-      return [...prevUsers, user]
-    })
+    setUsers((state) => [...state, user])
   }
 
   return (
     <Wrapper>
-      <NewUser onAddUser = {addUserHandler} />
+      <AddUserCard onAddUser={ addUserHandler } />
       {users.length > 0 && 
         <RegisterUserWrapper>
-          <ShowUsers users={users} />
+          <UsersList users={ users } />
         </RegisterUserWrapper>}
     </Wrapper>
   );
