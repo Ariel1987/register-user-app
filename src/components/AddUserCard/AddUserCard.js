@@ -2,6 +2,7 @@ import RegisterUserForm from "../RegisterUserForm/RegisterUserForm"
 import { Wrapper } from "../RegisterUserForm/RegisterUserForm.styles"
 
 const AddUserCard = ({ onAddUser }) => {
+
   const saveUserDataHandler = (enteredUserData) => {
     const userData = {
       ...enteredUserData,

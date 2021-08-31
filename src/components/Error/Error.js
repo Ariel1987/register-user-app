@@ -1,41 +1,31 @@
-import { useEffect, useState } from "react"
 import { Wrapper } from "./Error.styles"
 
 const Error = ({ errors = [], onShow }) => {
 
-    const [errorTitle, setErrorTitle] = useState()
-    const [localErrors, setLocalErrors] = useState(errors)
+  const renderErrors = () => {
+    if (errors.length <= 0) return null
+    return errors.map((error, index) => {
+      return (
+        <p key={`string-${index}`} style={{marginBottom: '8px'}}>{error.message}</p>
+      )
+    })
+  }
 
-    useEffect(() => {setLocalErrors(errors)}, [])
+  if (errors.length <= 0) return null
 
-    const renderErrors = () => {
-       
-        if (localErrors.length <= 0) return null
-
-        return localErrors.map(error => {
-            setErrorTitle(error.title)
-
-            return (
-                <p>{error.message}</p>
-            )
-        })
-    }
-
-    if (localErrors.length <= 0) return null
-
-    return (
-        <Wrapper>
-            <header>
-                <h2>{localErrors.length > 0 ? 'We found multiple errors' : errorTitle}</h2>
-            </header>
-            <div>
-                {renderErrors()}
-            </div>
-            <footer>
-                <button onClick={onShow}>Okay</button>
-            </footer>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <header>
+        <h2>{errors.length > 1 ? 'We found multiple errors' : errors[0].title}</h2>
+      </header>
+      <div>
+        {renderErrors()}
+      </div>
+      <footer>
+        <button onClick={onShow}>Okay</button>
+      </footer>
+    </Wrapper>
+  )
 
 }
 

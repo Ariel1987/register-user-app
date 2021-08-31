@@ -4,7 +4,7 @@ export class Validator {
             if (field.value.trim().length === 0) {
                 return {
                     title: 'Invalid input',
-                    message: `Please enter a valid ${field.name} and ${field.age} (non-empty values)`
+                    message: `Please enter a valid ${field.field} (non-empty values)`
                 }
             }
             return null

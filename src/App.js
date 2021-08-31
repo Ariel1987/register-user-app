@@ -10,7 +10,6 @@ function App() {
   const addUserHandler = (user) => {
     setUsers((state) => [...state, user])
   }
-
   return (
     <Wrapper>
       <AddUserCard onAddUser={ addUserHandler } />
