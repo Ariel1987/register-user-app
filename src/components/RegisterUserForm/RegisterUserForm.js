@@ -37,6 +37,7 @@ const RegisterUserForm = ({ onSaveUserData }) => {
 
     if (errors.length > 0) {
       setError(errors)
+      form.reset()
     } else {
       const userData = {
         name: name.value,

@@ -22,6 +22,10 @@ export const Wrapper = styled.div`
             color: white;
         }
 
+        p {
+            margin-bottom: 8px;
+        }
+
         div {
             padding: 1rem;
         }

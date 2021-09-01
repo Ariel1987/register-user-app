@@ -6,7 +6,7 @@ const Error = ({ errors = [], onShow }) => {
     if (errors.length <= 0) return null
     return errors.map((error, index) => {
       return (
-        <p key={`string-${index}`} style={{marginBottom: '8px'}}>{error.message}</p>
+        <p key={`string-${index}`}>{error.message}</p>
       )
     })
   }
